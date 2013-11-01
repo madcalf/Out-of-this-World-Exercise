@@ -9,6 +9,7 @@
 #import "DDOuterSpaceTableViewController.h"
 #import "AstronomicalData.h"
 #import "DDSpaceObject.h"
+#import "DDSpaceImageViewController.h"
 
 @interface DDOuterSpaceTableViewController ()
 
@@ -53,7 +54,7 @@
     
 }
 
-- (void)didReceiveMemoryWarning
+- (void) didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -82,6 +83,7 @@
     //    cell.textLabel.text = @"whoa... my first table view!";
     //    cell.textLabel.text = [NSString stringWithFormat:@"Section: %i   Row: %i", indexPath.section, indexPath.row];
     
+    // populate the current cell of our table
     DDSpaceObject *planetObject = self.planets[indexPath.row];
     NSLog(@"planetObject: %@", planetObject.name);
     cell.textLabel.text = planetObject.name;
@@ -91,16 +93,39 @@
     cell.backgroundColor = [UIColor clearColor];
     cell.textLabel.textColor = [UIColor orangeColor];
     cell.detailTextLabel.textColor = [UIColor colorWithWhite:.5 alpha:1];
-//    cell.detailTextLabel.textColor = [UIColor grayColor];
+    //    cell.detailTextLabel.textColor = [UIColor grayColor];
 
-//    if (indexPath.section == 0) {
-//        cell.backgroundColor = [UIColor cyanColor];
-//    } else if (indexPath.section == 1) {
-//        cell.backgroundColor = [UIColor greenColor];
-//    } else {
-//        cell.backgroundColor = [UIColor cyanColor];
-//    }
     return cell;
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    NSLog(@"TableViewController.prepareForSegue");
+    // currenty expecting this to be a UITableCellView, but need to make sure before we send any specific methods to it.
+    
+    // make sure the sender is a UITableViewCell, before using it in any TableViewCell specific way
+    if ([sender isKindOfClass:[UITableViewCell class]]) {
+        
+        // test if the target/destination of the segue is a DDSpaceImageView
+        // note segue.destinationController is of type ID, so we need to make sure it's the class we want then create a new variable of the correct type to point to it?
+        if ([segue.destinationViewController isKindOfClass:[DDSpaceImageViewController class]]) {
+            DDSpaceImageViewController *destinationController = segue.destinationViewController;
+            
+            // get the indexPath of this cell that was the sender of the message
+            NSIndexPath *path = [self.tableView indexPathForCell:sender];
+            
+            // get the spaceObject at the same index
+            DDSpaceObject *selectedObject = self.planets[path.row];
+            NSLog(@"selectedObject: %@", selectedObject);
+            // assign the spaceObject to the object property of the destinationController
+            destinationController.objectToDisplay = selectedObject;
+            NSLog(@"destination.objectToDisplay: %@", destinationController.objectToDisplay);
+           
+        }
+        
+    }
+    
+    
+    
 }
 
 /*

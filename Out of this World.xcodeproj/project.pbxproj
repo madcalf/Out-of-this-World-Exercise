@@ -33,6 +33,7 @@
 		6F83ED48181DDC6A00BBAEB2 /* Saturn.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6F83ED3E181DDC6A00BBAEB2 /* Saturn.jpg */; };
 		6F83ED49181DDC6A00BBAEB2 /* Uranus.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6F83ED3F181DDC6A00BBAEB2 /* Uranus.jpg */; };
 		6F83ED4A181DDC6A00BBAEB2 /* Venus.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6F83ED40181DDC6A00BBAEB2 /* Venus.jpg */; };
+		6F83ED9A181FFEE200BBAEB2 /* DDSpaceImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F83ED99181FFEE200BBAEB2 /* DDSpaceImageViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,8 @@
 		6F83ED3E181DDC6A00BBAEB2 /* Saturn.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Saturn.jpg; sourceTree = "<group>"; };
 		6F83ED3F181DDC6A00BBAEB2 /* Uranus.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Uranus.jpg; sourceTree = "<group>"; };
 		6F83ED40181DDC6A00BBAEB2 /* Venus.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Venus.jpg; sourceTree = "<group>"; };
+		6F83ED98181FFEE200BBAEB2 /* DDSpaceImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDSpaceImageViewController.h; sourceTree = "<group>"; };
+		6F83ED99181FFEE200BBAEB2 /* DDSpaceImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDSpaceImageViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +146,8 @@
 				6F83ECAB181CA41600BBAEB2 /* Main.storyboard */,
 				6F83ECCE181CA75C00BBAEB2 /* DDOuterSpaceTableViewController.h */,
 				6F83ECCF181CA75C00BBAEB2 /* DDOuterSpaceTableViewController.m */,
+				6F83ED98181FFEE200BBAEB2 /* DDSpaceImageViewController.h */,
+				6F83ED99181FFEE200BBAEB2 /* DDSpaceImageViewController.m */,
 				6F83ED33181DD36F00BBAEB2 /* DDSpaceObject.h */,
 				6F83ED34181DD36F00BBAEB2 /* DDSpaceObject.m */,
 				6F83ECB1181CA41600BBAEB2 /* Images.xcassets */,
@@ -309,6 +314,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F83ECAA181CA41600BBAEB2 /* DDAppDelegate.m in Sources */,
+				6F83ED9A181FFEE200BBAEB2 /* DDSpaceImageViewController.m in Sources */,
 				6F83ECD0181CA75C00BBAEB2 /* DDOuterSpaceTableViewController.m in Sources */,
 				6F83ECA6181CA41600BBAEB2 /* main.m in Sources */,
 				6F83ECD3181CBA5300BBAEB2 /* AstronomicalData.m in Sources */,
