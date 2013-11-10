@@ -58,7 +58,7 @@
     [self.delegate addSpaceObject:spaceObject];
 }
 
-#pragma mark - private methods
+#pragma mark - private / helper methods
 
 -(DDSpaceObject *)makeSpaceObject {
     DDSpaceObject *spaceObject = [[DDSpaceObject alloc] init];
